@@ -132,12 +132,12 @@
         document.getElementById("reservationForm").addEventListener("submit", function(event) {
             event.preventDefault();
             var name = document.getElementById("name").value;
-            var phone = document.getElementById("phone").value;
             var guests = document.getElementById("guests").value;
-            var guests = document.getElementById("tabletype").value;
+            var tabletype = document.getElementById("tabletype").value;
             var date = document.getElementById("date").value;
+            var time = document.getElementById("time").value;
             
-            alert("訂位成功！謝謝您，" + name + "！我們期待您的光臨。");
+            alert(name+"您好"+"\n"+"以下是您的訂位資訊:"+"\n"+"訂位日期: "+date+" 訂位時間: "+time+"\n"+"訂位人數: "+guests+" 訂位桌型: "+tabletype);
 
             document.getElementById("reservationForm").reset();
         });
