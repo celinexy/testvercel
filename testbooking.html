@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PNG CAFÉ訂位系統</title>
+    <style>
+        .container {
+            width: 700px;
+            margin: 0 auto;
+        }
+        input[type="text"], select, input[type="submit"] {
+            margin-top: 10px;
+        }
+        #tel{
+            color: #FF8C00;
+            text-decoration: underline;
+        }
+        .space{
+            padding: 5px;
+        }
+        .booking{
+            background-color: orange;
+            color: white;
+            padding: 10px 60px;
+            text-align: center;
+            display: inline-block;
+            font-size: 16px;
+            border-radius: 4px;
+            border: 2px solid orange;
+        }
+        .pspace{
+            padding-left: 38px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="https://i.imgur.com/h1NU05J.jpg" style="height:300px; width:700px; object-fit:cover;">
+        <h2>PNG CAFÉ</h2>
+        <h4>新北市板橋區民生路2段49號</h4>
+        <img src="https://i.imgur.com/XYUywdK.png" style="height: 20px;width:20px; padding: 2px; margin-right: 12px;"><b>0123456789</b>
+        <img src="https://i.imgur.com/84uP3AB.png" style="height: 25px;width:25px;  margin-right: 12px; margin-left: 12px"><b>查看地點</b>
+        <hr>
+        <form id="reservationForm">
+            <div class="space">
+                <label for="name"><b>姓名</b></label>
+                <br>
+                <input type="text" id="name" required>
+            </div>
+            <div class="space">
+                <label for="phone"><b>手機號碼</b></label>
+                <br>
+                <input type="text" id="phone" required>
+            </div>
+                <div class="space">
+                <label for="guests"><b>用餐人數</b></label>
+                <br>
+                <select id="guests" required>
+                    <option value="">選擇人數</option>
+                    <option value="1">1人</option>
+                    <option value="2" selected>2人</option>
+                    <option value="3">3人</option>
+                    <option value="4">4人</option>
+                    <option value="5">5人</option>
+                    <option value="5">6人</option>
+                </select>
+                <p>可接受1-6位訂位（含大人與小孩） *超過6人的訂位，請使用電話預約 <span id="tel">0123456789</span></p>
+            </div>
+            <div class="space">
+                <label for="tabletype"><b>用餐桌型</b></label>
+                <br>
+                <select id="tabletype" required>
+                    <option selected>室內區</option>
+                    <option>室外區</option>
+                </select>
+            </div>
+            <div class="space">
+                <label for="date"><b>用餐日期</b></label>
+                <div style="margin:10px;"></div>
+                <input type="date" id="date" required>
+            </div>
+            <div class="space">
+                <label for="time"><b>用餐時段</b></label>
+                <br>
+                <select id="time">
+                    <option value="11:00" selected>11:00</option>
+                    <option value="11:30">11:30</option>
+                    <option value="12:00">12:00</option>
+                    <option value="12:30">12:30</option>
+                    <option value="12:30">13:00</option>
+                    <option value="12:30">13:30</option>
+                    <option value="12:30">14:00</option>
+                    <option value="12:30">14:30</option>
+                    <option value="12:30">15:00</option>
+                    <option value="12:30">15:30</option>
+                    <option value="12:30">16:00</option>
+                    <option value="12:30">16:30</option>
+                </select>
+            </div>
+            <hr>
+            <div class="space">
+                <h4>餐廳資訊</h4>
+                <img src="https://i.imgur.com/84uP3AB.png" style="height: 25px;width:25px;  margin-right: 12px; padding-top:5px;"><b>位置</b>
+                <div class="pspace">
+                    <p>新北市板橋區民生路2段49號</p>
+                </div>
+                <hr>
+                <img src="https://i.imgur.com/XYUywdK.png" style="height: 20px;width:20px; padding: 2px; margin-right: 12px;"><b>聯絡電話</b>
+                <div class="pspace">
+                    <p>0123456789</p>
+                </div>
+                <hr>
+                <img src="https://i.imgur.com/ET3ZWPh.png"style="height: 20px;width:20px;  margin-right: 12px; padding-top:5px;"><b>營業時間</b>
+                <div class="pspace">
+                    <p>10:30 - 19:30</p>
+                </div>
+                <hr>
+                <img src="https://i.imgur.com/L93QTX0.png"style="height: 25px;width:25px;  margin-right: 12px; padding-top:5px;"><b>料理類型</b>
+                <div class="pspace">
+                    <p>精品咖啡,意式咖啡,茶,輕食,糕點</p>
+                </div>
+                <hr>
+            </div>
+            <div class="space">            
+                <input type="submit" value="立即訂位" class="booking">
+            </div>
+            
+        </form>
+    </div>
+
+    <script>
+        document.getElementById("reservationForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            var name = document.getElementById("name").value;
+            var phone = document.getElementById("phone").value;
+            var guests = document.getElementById("guests").value;
+            var guests = document.getElementById("tabletype").value;
+            var date = document.getElementById("date").value;
+            
+            alert("訂位成功！謝謝您，" + name + "！我們期待您的光臨。");
+
+            document.getElementById("reservationForm").reset();
+        });
+    </script>
+</body>
+</html>
